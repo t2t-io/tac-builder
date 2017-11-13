@@ -1,0 +1,18 @@
+<!-- 
+to be replaced by yaml def
+tacPageId
+tacHeaderText
+tacFooterText
+ -->
+
+<div data-role="page" id="tacPageId">
+	<div data-role="header">
+		<h1>tacHeaderText</h1>
+	</div><!-- /header -->
+	<div role="main" class="ui-content">
+		<tacContent/>
+	</div><!-- /content -->
+	<div data-role="footer" data-theme="a">
+		<h4>tacFooterText</h4>
+	</div><!-- /footer -->
+</div><!-- /page one -->

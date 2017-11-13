@@ -1,0 +1,17 @@
+{
+  "name": "tac-builder",
+  "version": "1.0.0",
+  "description": "app template creator for tac apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "arron@t2t.io",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "html": "^1.0.0",
+    "js-xlsx": "^0.8.22",
+    "yamljs": "^0.3.0"
+  }
+}
