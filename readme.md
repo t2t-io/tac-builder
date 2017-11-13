@@ -57,5 +57,7 @@ You can use your spreadsheet program to create a screen/page definition sheet li
 
 ![](tac_sheet_example.jpg)
 
+(`sample.xlsx` in this repository could also be used as a starting point to build your screen sheet.)
+
 Save it and then issue following command to generate the YAML definition.  Then you can feed it to `index.js` as shown in last step.
 `node xlsx2yaml XLSX_FILE > OUTPUT.yaml`
