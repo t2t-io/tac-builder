@@ -23,28 +23,7 @@ You can define your app screen/page flow in yaml or Excel(tm) sheet.
 
 sample YAML definition
 
-```
----
-- id: s01
-  footer: s01 footer
-  content:
-    - type: raw
-      text: <h1> page content here
-    - type: raw
-      text: <h4> another line below
-    - type: button
-      text: click me
-      link: s02
-- id: s02
-  header: s02
-  footer: s02
-  content:
-    - type: button
-      text: click me
-      link: s01
-    - type: raw
-      text: <p><a href="#s01" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Show page S01 as "popup" (as a dialog)</a></p>
-```
+![](yaml_sample.jpg)
 
 Then you can issue following command to generate the html page for your app:
 `node index.js YAML_FILE > index.html`
