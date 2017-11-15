@@ -26,7 +26,7 @@ sample YAML definition
 ![](yaml_sample.jpg)
 
 Then you can issue following command to generate the html page for your app:
-`node index.js YAML_FILE > index.html`
+`node genSpa.js YAML_FILE > index.html`
 
 Try to open the `index.html` with any browser, you can see the generated single page app.
 
@@ -38,5 +38,10 @@ You can use your spreadsheet program to create a screen/page definition sheet li
 
 (`sample.xlsx` in this repository could also be used as a starting point to build your screen sheet.)
 
-Save it and then issue following command to generate the YAML definition.  Then you can feed it to `index.js` as shown in last step.
+Save it and then issue following command to generate the YAML definition.  Then you can feed it to `genSpa.js` as shown in last step.
 `node xlsx2yaml XLSX_FILE > OUTPUT.yaml`
+
+
+## Other handy tools to install with npm i -g
+`phantomjs`: helps with automation and screeshots
+`http-server`: for localhost tests

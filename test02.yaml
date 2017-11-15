@@ -1,0 +1,34 @@
+---
+- id: s01
+  header: s01 header
+  footer: s01 footer
+  content:
+    - type: raw
+      text: <h1> Welcome to Tac example
+    - type: raw
+      text: <h4> this is the first/entry page
+    - type: button
+      text: proceed
+      link: s02
+- id: s02
+  header: s02 header
+  footer: s02 footer
+  content:
+    - type: button
+      text: proceed
+      link: s03
+    - type: button
+      text: back
+      link: s01
+    - type: raw
+      text: <p><a href="#s01" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Show page S01 as "popup" (as a dialog)</a></p>
+- id: s03
+  header: s03 header
+  footer: s03 footer
+  content:
+    - type: raw
+      text: <h1> Setup user preference
+    - type: raw
+      text: <h1> Check WiFi status
+    - type: raw
+      text: <h1> Reset everything

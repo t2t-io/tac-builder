@@ -1,0 +1,6 @@
+---
+- id: s01
+  header: ECHONet appliances
+  content:
+    - type: raw
+      text: <div id="el-list">
