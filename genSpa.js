@@ -15,6 +15,7 @@ var jqmHead = `<head>
  	<link rel="stylesheet" href="lib/jquery.mobile-1.4.5.min.css">
 	<script src="lib/jquery.min.js"></script>
  	<script src="lib/jquery.mobile-1.4.5.min.js"></script>
+ 	<script src="lib/handlebars.min.js"></script>
 </head>`
 
 // var pageTemplate = fs.readFileSync('page_template').toString()
