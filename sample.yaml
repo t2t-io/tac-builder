@@ -1,0 +1,16 @@
+-
+    id: s01
+    header: Welcome
+    footer: null
+    content: [{type: button, link: s02, text: 'start setting'}, {type: raw, text: '<p> a paragraph'}, {type: raw, text: '<h1> head text!'}]
+-
+    id: s02
+    header: Setting
+    footer: null
+    content: [{type: button, link: s01, text: 'go back'}, {type: button, link: s03, text: 'visit s03'}]
+-
+    id: s03
+    header: 中文
+    footer: null
+    content: [{type: raw, text: '<p> 中文頁面'}]
+

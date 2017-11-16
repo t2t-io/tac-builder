@@ -1,0 +1,17 @@
+tac-builder CLI design
+
+
+tac-spa NAME.yaml
+tac-spa NAME.xlsx
+	-> NAME.html
+
+tac-gen NAME.yaml/xlsx
+	tac-spa NAME.yaml/xlsx
+	cordova create NAME
+	cp NAME.html NAME/www
+	cordova platform add android ios
+	cordova plugin add ...
+	cordova prepare
+
+tac-build (in project foder)
+	cordova build android

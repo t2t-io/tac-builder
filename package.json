@@ -7,6 +7,12 @@
   },
   "author": "arron@t2t.io",
   "license": "ISC",
+  "bin": {
+    "tac-spa": "./tac-spa",
+    "tac-gen": "./tac-gen",
+    "tac-build": "./tac-build",
+    "xlsx2yaml": "./xlsx2yaml"
+  },
   "dependencies": {
     "bonjour": "^3.5.0",
     "cheerio": "^1.0.0-rc.2",

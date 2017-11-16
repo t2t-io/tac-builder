@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 // convert xlsx input sheet into yaml format
 // arron@t2t.io
 // (c) 2017

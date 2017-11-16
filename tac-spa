@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 // simple template engine to generate SPA for Tac
 // arron@t2t.io
 // (c) 2017
@@ -7,6 +8,8 @@ var HTML = require('html')
 var fs = require('fs')
 var process = require('process')
 const cheerio = require('cheerio')
+const execSync = require('child_process').execSync
+const path = require('path')
 
 var jqmHead = `<head>
 	<meta charset="utf-8">
@@ -19,7 +22,24 @@ var jqmHead = `<head>
 </head>`
 
 // var pageTemplate = fs.readFileSync('page_template').toString()
-var yamlContent = fs.readFileSync(process.argv[2]).toString()
+
+// check if the input is xlsx or yaml
+var filearg = process.argv[2]
+var ext = path.extname(filearg)
+var yamlName
+if(ext === '.xlsx' || ext === 'xls'){
+	yamlName = path.basename(filearg, ext) + '.yaml'
+	execSync('xlsx2yaml '+filearg+' > '+yamlName)
+}else if(ext ==='.yaml'){
+	yamlName = filearg
+}else{
+	console.log('Please add file extension name to .xlsx, .xls or .yaml to help programe detect your input type.')
+	process.exit();
+}
+var htmlName = path.basename(filearg, ext) + '.html'
+
+var yamlContent = fs.readFileSync(yamlName).toString()
+
 var pages = YAML.parse(yamlContent)
 // console.log('start to process::\n', pages)
 
@@ -59,4 +79,8 @@ for (var i=0;i<pages.length;i++){
 }
 
 var beautify = require('html')
-console.log(beautify.prettyPrint($.html()).replace("<head></head>", jqmHead).replace("<html>", "<!DOCTYPE html><html>"))
+var resultStr = beautify.prettyPrint($.html()).replace("<head></head>", jqmHead).replace("<html>", "<!DOCTYPE html><html>").replace("</body>", `
+	        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>`)
+fs.writeFileSync(htmlName,resultStr)
