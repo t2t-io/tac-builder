@@ -1,0 +1,16 @@
+-
+    id: s01
+    header: Welcome
+    footer: null
+    content: [{type: raw, text: '<h1> Welcome to App02'}, {type: raw, text: '<h2> This is the first time for you to use App02.  Please proceed to setup to personalize this app.'}, {type: button, link: s02, text: proceed}]
+-
+    id: s02
+    header: Setup
+    footer: null
+    content: [{type: raw, text: '<h1> Please register your email address'}, {type: raw, text: '<input> Email'}, {type: button, link: s03, text: submit}]
+-
+    id: s03
+    header: Main
+    footer: null
+    content: [{type: raw, text: '<h1> App02 Main Screen'}, {type: raw, text: '<img src="app_icon.jpg">'}, {type: button, link: s04, text: detail}]
+
