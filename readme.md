@@ -1,8 +1,13 @@
 # Tac App Builder
-Tac, as part of Tic-Tac-Toe offering, is the app client that interacts with cloud (Tic) and embedded (Toe) systems.  Leveraging powerful mobile phonhe OSes today, you can present and help user interact with rich and complex information about the IOT service you're trying to build.
+Tac, as part of Tic-Tac-Toe offering, is the app client that interacts with cloud (Tic) and embedded (Toe) systems.  Leveraging powerful mobile phonhe OSes today, you can present and help user interact with rich and complex information about the IOT service you're trying to build.  An Tac app is usually built with hybrid app architecture.  It's a simple and fast way to build app thesedays.  The UI could be made with matured web/HTML5 technologies.  The native layer could be programmed natively or rely on frameworks such as Apache Cordova.
 
-## Basics
-Tac is usually built with hybrid app architecture.  It's a simple and fast way to build app thesedays.  The UI could be made with matured web/HTML5 technologies.  The native layer could be programmed natively or rely on frameworks such as Apache Cordova.
+## Quickstart
+0. Load tac-builder image and make alias with `alias.sh`
+1. Make simple screen definition in YAML or use `sample.yaml` in this project.  (Re)name it as `myapp01.yaml`
+2. `tac-gen myapp01.yaml`
+3. `cd myapp01`
+4. `tac-build`
+5. Install `./myapp01/platforms/android/build/outputs/apk/android-debug.apk` to an Android phone and run it.
 
 ## Installation
 ### Prerequisite
@@ -23,14 +28,6 @@ java8: 1.9.0_111
 `cd tac-builder`
 
 `npm install -g`
-
-## Quickstart
-0. Load tac-builder image and make alias with `alias.sh`
-1. Make simple screen definition in YAML or use `sample.yaml` in this project.  (Re)name it as `myapp01.yaml`
-2. `tac-gen myapp01.yaml`
-3. `cd myapp01`
-4. `tac-build`
-5. Install `./myapp01/platforms/android/build/outputs/apk/android-debug.apk` to an Android phone and run it.
 
 ## Usage
 You can define your app screen/page flow in yaml or Excel(tm) sheet. 

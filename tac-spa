@@ -79,8 +79,8 @@ for (var i=0;i<pages.length;i++){
 }
 
 var beautify = require('html')
-var resultStr = beautify.prettyPrint($.html()).replace("<head></head>", jqmHead).replace("<html>", "<!DOCTYPE html><html>").replace("</body>", `
+var resultStr = beautify.prettyPrint($.html().replace("<head></head>", jqmHead).replace("<html>", "<!DOCTYPE html><html>").replace("</body>", `
 	        <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-    </body>`)
+    </body>`))
 fs.writeFileSync(htmlName,resultStr)
