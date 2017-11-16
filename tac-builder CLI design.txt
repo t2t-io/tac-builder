@@ -15,3 +15,10 @@ tac-gen NAME.yaml/xlsx
 
 tac-build (in project foder)
 	cordova build android
+
+
+
+// alias for docker
+alias tac-spa='docker run -it --rm -v "$PWD":/tmp tac-spa'
+alias tac-gen='docker run -it --rm -v "$PWD":/tmp tac-gen'
+alias tac-build='docker run -it --rm -v "$PWD":/tmp tac-build'

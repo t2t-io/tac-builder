@@ -6,20 +6,58 @@ Tac is usually built with hybrid app architecture.  It's a simple and fast way t
 
 ## Installation
 ### Prerequisite
-nodejs: v4.2.6
-npm: v3.5.2
+docker `tac-builder` or   
 
-### Steps
+```
+nodejs: v8.9.0
+npm: v3.5.2
+cordova: 7.1.0
+android build tools: 27.0.0
+android sdk: r25.2.5
+java8: 1.9.0_111
+```
+
+### Steps (if not using docker)
 `git clone https://github.com/t2t-io/tac-builder.git`
 
 `cd tac-builder`
 
-`npm install`
+`npm install -g`
 
-### Usage
+## Quickstart
+0. Load tac-builder image and make alias with `alias.sh`
+1. Make simple screen definition in YAML or use `sample.yaml` in this project.  (Re)name it as `myapp01.yaml`
+2. `tac-gen myapp01.yaml`
+3. `cd myapp01`
+4. `tac-build`
+5. Install `./myapp01/platforms/android/build/outputs/apk/android-debug.apk` to an Android phone and run it.
+
+## Usage
 You can define your app screen/page flow in yaml or Excel(tm) sheet. 
 
-#### YAML definition
+### Generate SPA (single page app) from yaml definition
+
+`tac-spa NAME.yaml`
+
+This command will generate a SPA html file `NAME.html`
+
+### Generate SPA from xlsx definition
+`tac-spa NAME.xlsx`
+This command will generate a yaml definition `NAME.yaml` and a SPA html file `NAME.html` as result.
+
+### Generate ready to build iOS and Android project folders
+`tac-gen NAME.yaml/xlsx`
+This command will generate project folders ready to build by Android and iOS SDK tools.
+
+### Build with Android SDK (by tac-builder docker image)
+`tac-build`
+This commnad should be issued inside project folder.  It will use the Android SDK installed inside docker image to build the project.  Result `apk` file ready to be tested on mobile phone will be placed under `[NAME]/platforms/android/build/outputs/apk`.
+
+### Build with iOS SDK
+Just issue `xcodebuild` command under the generated project folder for iOS platform.  Pattern of the folder is `[NAME]/platforms/ios/`.  Please note that you should use Xcode IDE GUI to select proper provisioning profile first so that `xcodebuild` CLI could be executed properly.
+
+
+## YAML definition
 
 sample YAML definition
 
@@ -31,7 +69,7 @@ Then you can issue following command to generate the html page for your app:
 Try to open the `index.html` with any browser, you can see the generated single page app.
 
 
-### Excel definition
+## Excel definition
 You can use your spreadsheet program to create a screen/page definition sheet like following:
 
 ![](tac_sheet_example.jpg)
@@ -42,6 +80,6 @@ Save it and then issue following command to generate the YAML definition.  Then 
 `node xlsx2yaml XLSX_FILE > OUTPUT.yaml`
 
 
-## Other handy tools to install with npm i -g
+## Other handy tools
 `phantomjs`: helps with automation and screeshots
 `http-server`: for localhost tests
