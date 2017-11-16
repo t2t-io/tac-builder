@@ -6,7 +6,7 @@ echo "Generate SPA from $fullname"
 tac-spa "$fullname"
 cordova create $pname --no-telemetry
 cp "$pname.html" "$pname/www/index.html"
-cp -r /usr/local/lib/node_modules/tac-builder/lib "$pname/www/lib"
+cp -r `npm root -g`/tac-builder/lib "$pname/www/lib"
 cd "$pname"
 cordova plugin add cordova-plugin-zeroconf --no-telemetry
 
