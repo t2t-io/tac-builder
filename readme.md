@@ -1,17 +1,16 @@
 # Tac App Builder
 Tac, as part of Tic-Tac-Toe offering, is the app client that interacts with cloud (Tic) and embedded (Toe) systems.  Leveraging powerful mobile phonhe OSes today, you can present and help user interact with rich and complex information about the IOT service you're trying to build.  An Tac app is usually built with hybrid app architecture.  It's a simple and fast way to build app thesedays.  The UI could be made with matured web/HTML5 technologies.  The native layer could be programmed natively or rely on frameworks such as Apache Cordova.
 
-## Quickstart
-0. Load tac-builder image and make alias with `alias.sh`
+## Quickstart (with Docker)
+0. First time only: load `tac-builder` image with command `docker load -i tac-builder.gz` and make alias with `./alias.sh`
 1. Make simple screen definition in YAML or use `sample.yaml` in this project.  (Re)name it as `myapp01.yaml`
 2. `tac-gen myapp01.yaml`
 3. `cd myapp01`
 4. `tac-build`
 5. Install `./myapp01/platforms/android/build/outputs/apk/android-debug.apk` to an Android phone and run it.
 
-## Installation
-### Prerequisite
-docker `tac-builder` or   
+## Installation (if not using Docker)
+Install and configure following tools.
 
 ```
 nodejs: v8.9.0
@@ -19,15 +18,15 @@ npm: v3.5.2
 cordova: 7.1.0
 android build tools: 27.0.0
 android sdk: r25.2.5
-java8: 1.9.0_111
+java 8 SDK: 1.9.0_111
 ```
 
-### Steps (if not using docker)
 `git clone https://github.com/t2t-io/tac-builder.git`
 
 `cd tac-builder`
 
 `npm install -g`
+
 
 ## Usage
 You can define your app screen/page flow in yaml or Excel(tm) sheet. 
