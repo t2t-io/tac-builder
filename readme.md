@@ -2,12 +2,14 @@
 Tac, as part of Tic-Tac-Toe offering, is the app client that interacts with cloud (Tic) and embedded (Toe) systems.  Leveraging powerful mobile phonhe OSes today, you can present and help user interact with rich and complex information about the IOT service you're trying to build.  An Tac app is usually built with hybrid app architecture.  It's a simple and fast way to build app thesedays.  The UI could be made with matured web/HTML5 technologies.  The native layer could be programmed natively or rely on frameworks such as Apache Cordova.
 
 ## Quickstart (with Docker)
-0. First time only: load `tac-builder` image with command `cat tac-builder.gz | gunzip | pv | docker load` and make alias with `./alias.sh`
+1. Obtain prebuilt image, around 2GB in gzip.  Or build using Dockerfile in this repo [TBD].
+1. Run `gzcat | docker load`.  You can also run `gzcat | pv | docker load` to see the progress
+1. Run `source alias.sh` to load command alias
 1. Make simple screen definition in YAML or use `sample.yaml` in this project.  (Re)name it as `myapp01.yaml`
-2. `tac-gen myapp01.yaml`
-3. `cd myapp01`
-4. `tac-build`
-5. Install `./myapp01/platforms/android/build/outputs/apk/android-debug.apk` to an Android phone and run it.
+1. `tac-gen myapp01.yaml`
+1. `cd myapp01`
+1. `tac-build`
+1. Install `./myapp01/platforms/android/build/outputs/apk/android-debug.apk` to an Android phone and run it.
 
 ## Installation (if not using Docker)
 Install and configure following tools.
