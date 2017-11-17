@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>TAC template</title>
+        <link rel="stylesheet" href="lib/jquery.mobile-1.4.5.min.css">
+        <script src="lib/jquery.min.js"></script>
+        <script src="lib/jquery.mobile-1.4.5.min.js"></script>
+        <script src="lib/handlebars.min.js"></script>
+    </head>
+    
+    <body>
+        <div id="tacHtmlTop">
+            <div data-role="page" id="s01">
+                <div data-role="header">
+                    <h1>s01 header</h1>
+                </div>
+                <div role="main" class="ui-content">
+                    <h1> Welcome to Tac example</h1>
+                    <h4> this is the first/entry page</h4>
+                    <p><a href="#s02" class="ui-btn ui-shadow ui-corner-all">proceed</a>
+                    </p>
+                    <h4>this also supports pug</h4>
+                </div>
+                <div data-role="footer">
+                    <h4>s01 footer</h4>
+                </div>
+            </div>
+            <div data-role="page" id="s02">
+                <div data-role="header">
+                    <h1>s02 header</h1>
+                </div>
+                <div role="main" class="ui-content">
+                    <p><a href="#s03" class="ui-btn ui-shadow ui-corner-all">proceed</a>
+                    </p>
+                    <p><a href="#s01" class="ui-btn ui-shadow ui-corner-all">back</a>
+                    </p>
+                    <p><a href="#s01" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog"
+                        data-transition="pop">Show page S01 as &quot;popup&quot; (as a dialog)</a>
+                    </p>
+                </div>
+                <div data-role="footer">
+                    <h4>s02 footer</h4>
+                </div>
+            </div>
+            <div data-role="page" id="s03">
+                <div data-role="header">
+                    <h1>s03 header</h1>
+                </div>
+                <div role="main" class="ui-content">
+                    <h1> Setup user preference</h1>
+                    <h1> Check WiFi status</h1>
+                    <h1> Reset everything</h1>
+                </div>
+                <div data-role="footer">
+                    <h4>s03 footer</h4>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+
+</html>

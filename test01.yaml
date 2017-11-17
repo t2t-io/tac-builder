@@ -10,6 +10,8 @@
     - type: button
       text: proceed
       link: s02
+    - type: pug
+      text: h4 this also supports pug
 - id: s02
   header: s02 header
   footer: s02 footer
