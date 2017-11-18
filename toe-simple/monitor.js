@@ -1,4 +1,4 @@
-var EchonetLite = require('./lib/node-echonet-lite.js');
+var EchonetLite = require('node-echonet-lite');
 var el = new EchonetLite({'lang': 'en', 'type': 'lan'});
 
 el.init((err) => {
@@ -16,10 +16,12 @@ el.init((err) => {
       }
     });
     el.on('data', (res) => {
+      
       console.log(createLine('='));
       console.log('[RECV] from ' + res['device']['address']);
       console.log(createLine('-'));
-      console.log(res['formatted']);
+      console.log(res['message']);
+      console.log(res['structure'])
       console.log('');
     });
     el.on('sent', (res) => {

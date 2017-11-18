@@ -17,6 +17,8 @@ function addContent(lst, obj){
 		lst.push({'type':'button', 'link':obj['arg1'], 'text':obj['arg2']})
 	}else if(obj['type'] == 'raw'){
 		lst.push({'type':'raw', 'text':obj['arg1']})
+	}else if(obj['type'] == 'pug'){
+		lst.push({'type':'pug', 'text':obj['arg1']})
 	}
 }
 for (var i = 0;i<src.length;i++){
