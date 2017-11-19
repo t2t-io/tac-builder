@@ -2,7 +2,7 @@
 Tac, as part of Tic-Tac-Toe offering, is the app client that interacts with cloud (Tic) and embedded (Toe) systems.  Leveraging powerful mobile phonhe OSes today, you can present and help user interact with rich and complex information about the IOT service you're trying to build.  An Tac app is usually built with hybrid app architecture.  It's a simple and fast way to build app thesedays.  The UI could be made with matured web/HTML5 technologies.  The native layer could be programmed natively or rely on frameworks such as Apache Cordova.
 
 ## Quickstart (with Docker)
-1. Obtain prebuilt image, around 2GB in gzip.  Or build using Dockerfile in this repo [TBD].
+1. Obtain prebuilt image, around 2GB in gzip.  Or build using `dockerfile/build.sh` in this repo.
 1. Run `gzcat | docker load`.  You can also run `gzcat | pv | docker load` to see the progress
 1. Run `source alias.sh` to load command alias
 1. Make simple screen definition in YAML or use `sample.yaml` in this project.  (Re)name it as `myapp01.yaml`
@@ -29,14 +29,14 @@ java 8 SDK: 1.9.0_111
 
 `npm install -g`
 
-### Demo
-#### demo 1 - basic screen/page definition in Excel sheet
+## Demo
+### demo 1 - basic screen/page definition in Excel sheet
 [demo1](https://youtu.be/JX1qqgR33K8)
 
-#### demo 2 - present dynamic list
+### demo 2 - present dynamic list
 [demo2](https://youtu.be/xaLqJl_iDtI)
 
-#### demo 3 - search local server and get object to present
+### demo 3 - search local server and get object to present
 [demo3](https://youtu.be/fXA1zYTDv1w)
 
 
