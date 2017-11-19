@@ -29,6 +29,16 @@ java 8 SDK: 1.9.0_111
 
 `npm install -g`
 
+### Demo
+#### demo 1 - basic screen/page definition in Excel sheet
+[demo1](https://youtu.be/JX1qqgR33K8)
+
+#### demo 2 - present dynamic list
+[demo2](https://youtu.be/xaLqJl_iDtI)
+
+#### demo 3 - search local server and get object to present
+[demo3](https://youtu.be/fXA1zYTDv1w)
+
 
 ## Usage
 You can define your app screen/page flow in yaml or Excel(tm) sheet. 
