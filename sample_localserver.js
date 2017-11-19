@@ -27,7 +27,7 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
-        this.receivedEvent('deviceready');
+        // this.receivedEvent('deviceready');
         var zeroconf = cordova.plugins.zeroconf;
         // zeroconf.registerAddressFamily = 'ipv4'; // or 'ipv6' ('any' by default)
         // zeroconf.watchAddressFamily = 'ipv4'; // or 'ipv6' ('any' by default)
@@ -38,36 +38,38 @@ var app = {
                 console.log('service added', service);
             } else if (action == 'resolved') {
                 console.log('service resolved', service);
-                $('#el-scan').text(service.ipv4Addresses[0] + 'p' +service.port);
+                $('#el-scan').text(service.ipv4Addresses[0] + ':' +service.port);
                 // app.server = {'ip': service.ipv4Addresses[0], 'port':service.port};
+                    $.get('http://'+service.ipv4Addresses[0]+':'+service.port, (report)=>{
 
-                var report
-                $.get('http://'+service.ipv4Addresses[0]+':'+service.port, (res)=>{report = res})
-                var templateHead = '<ul data-role="listview" data-inset="true">'
-                var templateBody = `
-                <li data-role="list-divider">Appliance found </li>
-                <li><a href="#">
-                    <h2>{{class}}</h2>
-                    <p> part of {{classgroup}}</p>
-                    <p> connected to {{address}} </p>
-                    <p class="ui-li-aside"><strong>{{instance}}</strong></p>
-                    </a>
-                </li>
-                `
+                    var templateHead = '<ul data-role="listview" data-inset="true">'
+                    var templateBody = `
+                    <li data-role="list-divider">Appliance found </li>
+                    <li><a href="#">
+                        <h2>{{class}}</h2>
+                        <p> part of {{classgroup}}</p>
+                        <p> connected to {{address}} </p>
+                        <p class="ui-li-aside"><strong>{{instance}}</strong></p>
+                        </a>
+                    </li>
+                    `
 
-                var outs = ''
-                outs+=templateHead
+                    var outs = ''
+                    outs+=templateHead
 
-                report.forEach((o) => {
-                    var body = templateBody
-                    body = body.replace('{{class}}', o.class)
-                    body = body.replace('{{classgroup}}', o.classgroup)
-                    body = body.replace('{{address}}', o.address)
-                    body = body.replace('{{instance}}', o.instance)
-                    outs+=body
+                    report.forEach((o) => {
+                        var body = templateBody
+                        body = body.replace('{{class}}', o.class)
+                        body = body.replace('{{classgroup}}', o.classgroup)
+                        body = body.replace('{{address}}', o.address)
+                        body = body.replace('{{instance}}', o.instance)
+                        outs+=body
+                    })
+
+                    $("#el-list").append(outs)
+
                 })
 
-                $("#el-list").append(outs)
             } else {
                 console.log('service removed', service);
             }
