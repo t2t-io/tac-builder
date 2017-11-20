@@ -39,6 +39,8 @@ java 8 SDK: 1.9.0_111
 ### demo 3 - search local server and get object to present
 [demo3](https://youtu.be/fXA1zYTDv1w)
 
+### demo 4 - scan local lan for devices and report to app
+Use the app from demo3 while launch a different server code in `demo/toe-simple`, `node echo-server.js`.  It will start to scan subnet using ECHONet Lite standard.  When it get ESV code `0x72` (Property value read response (Get_Res)), it will parse the result in scanResult JSON object and wait for the app to query the result.  On the app side, you can add some logic to check timestap of the scan result and finetune the presentation.
 
 ## Usage
 You can define your app screen/page flow in yaml or Excel(tm) sheet. 
