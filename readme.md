@@ -35,13 +35,14 @@ java 8 SDK: 1.9.0_111
 
 ### demo 2 - present dynamic list
 [demo2 video](https://youtu.be/xaLqJl_iDtI)
+
 transcript
 ```
 demo 2
 dynamic content example
 in this demo, we will try to present the json objects in dynamic list
 firstly, let's create simple screens to explain about the scanning and present the scan result
-the key is to leave a d i v tag with i d so that javascript code can locate it
+the key is to leave a div tag with id so that javascript code can locate it
 let's use id 'el-list'
 save the spread sheet as demo2.xlsx and generate it again using command tac-gen
 then go to the project folder demo2/www/js
@@ -52,6 +53,8 @@ you can see the json object has been enumerated on the screen
 
 ### demo 3 - search local server and get object to present
 [demo3 video](https://youtu.be/fXA1zYTDv1w)
+
+transcript
 ```
 demo 3
 next, let's extend the app functionality to find a server in local network and query for latest object data
