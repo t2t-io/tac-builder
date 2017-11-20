@@ -52,6 +52,7 @@ you can see the json object has been enumerated on the screen
 ```
 
 #### commands for demo 2
+1. `cd ./demo`
 1. `tac-gen demo2.xlsx`
 1. `cat sample_list.js >> demo2/www/js/index.js`
 1. `cd demo2`
@@ -79,6 +80,7 @@ open the app on your phone, it should be able to discover the IP address of your
 ```
 
 #### commands for demo 3
+1. `cd ./demo`
 1. `tac-gen demo3.xlsx`
 1. `cp sample_localserver.js demo3/www/js/index.js`
 1. `cd demo3`
@@ -94,7 +96,7 @@ or `cd platforms/ios` and `xcodebuild` for iOS
 Use the app from demo3 while launch a different server code in `demo/toe-simple`, `node echo-server.js`.  It will start to scan subnet using ECHONet Lite standard.  When it get ESV code `0x72` (Property value read response (Get_Res)), it will parse the result in scanResult JSON object and wait for the app to query the result.  On the app side, you can add some logic to check timestap of the scan result and finetune the presentation.
 
 #### commands for demo 4
-1. `cd toe-simple`
+1. `cd demo/toe-simple`
 1. `node echo-server.js`
 1. launch the app from demo 3 and see if dynamic scan show on app
 You might want to connect the PC running `echo-server.js` to some network with real ECHONet Lite devices; or launch the Moekaden demo written in Processing to emulate such devices.
