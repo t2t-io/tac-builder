@@ -36,7 +36,7 @@ java 8 SDK: 1.9.0_111
 ### demo 2 - present dynamic list
 [demo2 video](https://youtu.be/xaLqJl_iDtI)
 
-transcript
+#### transcript
 ```
 demo 2
 dynamic content example
@@ -50,6 +50,13 @@ and append the sample code sample_list.js to the file index.js
 launch local web server and check the result
 you can see the json object has been enumerated on the screen
 ```
+
+#### commands for demo 2
+1. `tac-gen demo2.xlsx`
+1. `cat sample_list.js >> demo2/www/js/index.js`
+1. `cd demo2`
+1. `tac-build` (for Android)
+or `cd platforms/ios` and `xcodebuild` for iOS
 
 ### demo 3 - search local server and get object to present
 [demo3 video](https://youtu.be/fXA1zYTDv1w)
@@ -71,8 +78,26 @@ this is a simple server that broadcast it's IP address and also a simple API to 
 open the app on your phone, it should be able to discover the IP address of your server in the same local network (subnet) and get scan result data as JSON
 ```
 
+#### commands for demo 3
+1. `tac-gen demo3.xlsx`
+1. `cp sample_localserver.js demo3/www/js/index.js`
+1. `cd demo3`
+1. `tac-build` (for Android)
+or `cd platforms/ios` and `xcodebuild` for iOS
+1. install the apk or ipa
+1. `cd toe-simple`
+1. `npm install`
+1. `node index.js`
+1. launch the app and check if local server being discovered in the same subnet
+
 ### demo 4 - scan local lan for devices and report to app
 Use the app from demo3 while launch a different server code in `demo/toe-simple`, `node echo-server.js`.  It will start to scan subnet using ECHONet Lite standard.  When it get ESV code `0x72` (Property value read response (Get_Res)), it will parse the result in scanResult JSON object and wait for the app to query the result.  On the app side, you can add some logic to check timestap of the scan result and finetune the presentation.
+
+#### commands for demo 4
+1. `cd toe-simple`
+1. `node echo-server.js`
+1. launch the app from demo 3 and see if dynamic scan show on app
+You might want to connect the PC running `echo-server.js` to some network with real ECHONet Lite devices; or launch the Moekaden demo written in Processing to emulate such devices.
 
 ## Usage
 You can define your app screen/page flow in yaml or Excel(tm) sheet. 

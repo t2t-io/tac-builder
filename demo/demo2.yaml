@@ -1,0 +1,11 @@
+-
+    id: s01
+    header: demo2
+    footer: null
+    content: [{type: pug, text: 'h1 Scan for devices in local network'}, {type: button, link: s02, text: Scan}]
+-
+    id: s02
+    header: result
+    footer: null
+    content: [{type: pug, text: 'h1 Scan result'}, {type: pug, text: 'div#el-list'}]
+
