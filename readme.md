@@ -35,9 +35,38 @@ java 8 SDK: 1.9.0_111
 
 ### demo 2 - present dynamic list
 [demo2 video](https://youtu.be/xaLqJl_iDtI)
+transcript
+```
+demo 2
+dynamic content example
+in this demo, we will try to present the json objects in dynamic list
+firstly, let's create simple screens to explain about the scanning and present the scan result
+the key is to leave a d i v tag with i d so that javascript code can locate it
+let's use id 'el-list'
+save the spread sheet as demo2.xlsx and generate it again using command tac-gen
+then go to the project folder demo2/www/js
+and append the sample code sample_list.js to the file index.js
+launch local web server and check the result
+you can see the json object has been enumerated on the screen
+```
 
 ### demo 3 - search local server and get object to present
 [demo3 video](https://youtu.be/fXA1zYTDv1w)
+```
+demo 3
+next, let's extend the app functionality to find a server in local network and query for latest object data
+firstly, let's revise base on demo 2 screen definition
+in s02, change the header with id so that javascript code can use it to reflect actual discovery result
+it's either string 'scanning' or the ip address found from scannning
+we can keep el_list id unchanged
+save into demo3.xlsx and run tac-gen to generate new project folder
+in www/js folder, replace index.js with content of sample_localserver.js
+the code include bonjour browse behavior and also the dynamic list generation from demo 2
+build and install the app to mobile phone
+on the PC where you git clone tac-builder, go into toe-simple and run `node index.js`
+this is a simple server that broadcast it's IP address and also a simple API to return scan result object in JSON
+open the app on your phone, it should be able to discover the IP address of your server in the same local network (subnet) and get scan result data as JSON
+```
 
 ### demo 4 - scan local lan for devices and report to app
 Use the app from demo3 while launch a different server code in `demo/toe-simple`, `node echo-server.js`.  It will start to scan subnet using ECHONet Lite standard.  When it get ESV code `0x72` (Property value read response (Get_Res)), it will parse the result in scanResult JSON object and wait for the app to query the result.  On the app side, you can add some logic to check timestap of the scan result and finetune the presentation.
