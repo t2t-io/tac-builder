@@ -3,7 +3,7 @@ Tac, as part of Tic-Tac-Toe offering, is the app client that interacts with clou
 
 ## Quickstart (with Docker)
 1. Obtain prebuilt image, around 2GB in gzip.  Or build using `dockerfile/build.sh` in this repo; then you can jump directly to step 3.
-1. Run `gzcat | docker load`.  You can also run `gzcat | pv | docker load` to see the progress
+1. Run `gzcat tac-builder.gz | docker load`.  You can also run `gzcat | pv | docker load` to see the progress
 1. Run `source alias.sh` to load command alias
 1. Make simple screen definition in YAML or use `sample.yaml` in this project.  (Re)name it as `myapp01.yaml`
 1. `tac-gen myapp01.yaml`
