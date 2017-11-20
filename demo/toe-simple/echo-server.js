@@ -1,7 +1,12 @@
+const express = require('express')
+const app = express()
+var bonjour = require('bonjour')()
+bonjour.publish({name: 'tictactoe', type: 'toe',  port: 3000})
+
 var EchonetLite = require('node-echonet-lite');
 var el = new EchonetLite({'lang': 'en', 'type': 'lan'});
 
-var scanReport
+var scanReport = []
 
 el.init((err) => {
   if(err) {
@@ -67,3 +72,11 @@ function createLine(char) {
   return line;
 }
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+app.get('/', (req, res) => res.json(scanReport))
+app.listen(3000, () => console.log('Example app listening on port 3000!'))
