@@ -31,13 +31,13 @@ java 8 SDK: 1.9.0_111
 
 ## Demo
 ### demo 1 - basic screen/page definition in Excel sheet
-[demo1](https://youtu.be/JX1qqgR33K8)
+[demo1 video](https://youtu.be/JX1qqgR33K8)
 
 ### demo 2 - present dynamic list
-[demo2](https://youtu.be/xaLqJl_iDtI)
+[demo2 video](https://youtu.be/xaLqJl_iDtI)
 
 ### demo 3 - search local server and get object to present
-[demo3](https://youtu.be/fXA1zYTDv1w)
+[demo3 video](https://youtu.be/fXA1zYTDv1w)
 
 ### demo 4 - scan local lan for devices and report to app
 Use the app from demo3 while launch a different server code in `demo/toe-simple`, `node echo-server.js`.  It will start to scan subnet using ECHONet Lite standard.  When it get ESV code `0x72` (Property value read response (Get_Res)), it will parse the result in scanResult JSON object and wait for the app to query the result.  On the app side, you can add some logic to check timestap of the scan result and finetune the presentation.
