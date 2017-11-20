@@ -3,15 +3,14 @@ fullname=$1
 pname=${fullname%.*}
 
 echo "Generate SPA from $fullname"
-tac-spa "$fullname"
-cordova create $pname --no-telemetry
-cp "$pname.html" "$pname/www/index.html"
-cp -r `npm root -g`/tac-builder/lib "$pname/www/lib"
-cd "$pname"
-cordova plugin add cordova-plugin-zeroconf --no-telemetry
-
-echo "Generate Android and iOS projects for project name: $pname"
-cordova platform add android ios --no-telemetry
-cd ..
-echo "Project folder $pname is genearted with your YAML defined html copied into $pname/www."
-echo "You can add script in $pname/www/js/index.js to chagne behavior of your app."
+tac-spa "$fullname" &&
+cordova create $pname --no-telemetry &&
+cp "$pname.html" "$pname/www/index.html" &&
+cp -r `npm root -g`/tac-builder/lib "$pname/www/lib" &&
+cd "$pname" &&
+cordova plugin add cordova-plugin-zeroconf --no-telemetry &&
+echo "Generate Android and iOS projects for project name: $pname" &&
+cordova platform add android ios --no-telemetry &&
+cd .. &&
+echo "Project folder $pname is genearted with your YAML defined html copied into $pname/www." &&
+echo "You can add script in $pname/www/js/index.js to chagne behavior of your app." &&
