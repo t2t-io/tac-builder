@@ -101,6 +101,18 @@ Use the app from demo3 while launch a different server code in `demo/toe-simple`
 1. launch the app from demo 3 and see if dynamic scan show on app
 You might want to connect the PC running `echo-server.js` to some network with real ECHONet Lite devices; or launch the Moekaden demo written in Processing to emulate such devices.
 
+### demo 5 - BLE scan
+Usage the app from demo4, add a button start BLE scanning and another screen to show the scan results.
+
+### commands for demo 5
+1. `cd demo`
+1. `tac-gen demo5.yaml`
+1. `cp sample_ble.js demo5/www/js/index.js`
+1. `tac-build`
+1. Instal and run the apk/ipa to your phone. Grant the BLE permission.  The result should be like following screenshot.
+
+![](ble_scan.png)
+
 ## Usage
 You can define your app screen/page flow in yaml or Excel(tm) sheet. 
 

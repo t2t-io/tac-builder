@@ -1,0 +1,37 @@
+-
+    id: s01
+    header: demo5
+    footer: null
+    content:
+        -
+            type: pug
+            text: 'h1 Scan for devices in local network or BLE'
+        -
+            type: button
+            link: s02
+            text: Subnet scan
+        -   
+            type: button
+            link: s03
+            text: BLE scan
+-
+    id: s02
+    header: Subnet result
+    footer: null
+    content:
+        -
+            type: pug
+            text: 'h1#el-scan Scanning'
+        -
+            type: pug
+            text: 'div#el-list'
+-
+    id: s03
+    header: BLE result
+    content:
+        - 
+            type: pug
+            text: 'h1#ble-scan Scanning BLE'
+        -
+            type: pug
+            text: 'div#ble-list'

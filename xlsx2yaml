@@ -30,4 +30,4 @@ for (var i = 0;i<src.length;i++){
 	addContent(result[lastIdx]['content'],row)
 }
 
-console.log(YAML.stringify(result))
+console.log(YAML.stringify(result, 4))

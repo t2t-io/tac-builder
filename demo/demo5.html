@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>TAC template</title>
+        <link rel="stylesheet" href="lib/jquery.mobile-1.4.5.min.css">
+        <script src="lib/jquery.min.js"></script>
+        <script src="lib/jquery.mobile-1.4.5.min.js"></script>
+        <script src="lib/handlebars.min.js"></script>
+    </head>
+    
+    <body>
+        <div id="tacHtmlTop">
+            <div data-role="page" id="s01">
+                <div data-role="header">
+                    <h1>demo5</h1>
+                </div>
+                <div role="main" class="ui-content">
+                    <h1>Scan for devices in local network or BLE</h1>
+                    <p><a href="#s02" class="ui-btn ui-shadow ui-corner-all">Subnet scan</a>
+                    </p>
+                    <p><a href="#s03" class="ui-btn ui-shadow ui-corner-all">BLE scan</a>
+                    </p>
+                </div>
+            </div>
+            <div data-role="page" id="s02">
+                <div data-role="header">
+                    <h1>Subnet result</h1>
+                </div>
+                <div role="main" class="ui-content">
+                    <h1 id="el-scan">Scanning</h1>
+                    <div id="el-list"></div>
+                </div>
+            </div>
+            <div data-role="page" id="s03">
+                <div data-role="header">
+                    <h1>BLE result</h1>
+                </div>
+                <div role="main" class="ui-content">
+                    <h1 id="ble-scan">Scanning BLE</h1>
+                    <div id="ble-list"></div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+
+</html>
