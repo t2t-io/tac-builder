@@ -1,7 +1,11 @@
 #!/bin/bash
 fullname=$1
 pname=${fullname%.*}
-add_plugin=`cat config_plugin.txt | tr '\n' ' '`
+if [ -f 'config_plugin.txt' ]; then
+	add_plugin=`cat config_plugin.txt | tr '\n' ' '`
+else
+	add_plugin='cordova-plugin-zeroconf cordova-plugin-ble-central'
+fi
 
 echo "Generate SPA from $fullname"
 tac-spa "$fullname" &&
