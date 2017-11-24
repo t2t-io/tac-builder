@@ -161,6 +161,17 @@ Save it and then issue following command to generate the YAML definition.  Then 
 `node xlsx2yaml XLSX_FILE > OUTPUT.yaml`
 
 
+## Optional configurations
+### `config_head_template.txt`
+If this file exists in the same folder as your XLSX/YAML when you invoke `tac-spa`, `tac-gen` or `tac-spa-update`, tac-builder will use its content to initialize HTML <head> element.  Otherwise it will use default template.
+
+### `config_plugin.txt`
+If this file exists in the same folder as your XLSX/YAML when you invoke `tac-gen`, tac-builder will use its content to install cordova plug-ins as specified.  The file is a line based list of plugin names:
+```
+cordova-plugin-zeroconf
+cordova-plugin-ble-central
+```
+
 ## Other handy tools
 `phantomjs`: helps with automation and screeshots
 `http-server`: for localhost tests; you can rut it in `www` folder of the generated project
