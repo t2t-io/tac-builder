@@ -1,6 +1,7 @@
 #!/bin/bash
 fullname=$1
 pname=${fullname%.*}
+add_plugin=`cat config_plugin.txt | tr '\n' ' '`
 
 echo "Generate SPA from $fullname"
 tac-spa "$fullname" &&
@@ -10,7 +11,7 @@ cp -r `npm root -g`/tac-builder/lib "$pname/www/lib" &&
 cd "$pname" &&
 echo "Generate Android and iOS projects for project name: $pname" &&
 cordova platform add android ios --no-telemetry &&
-cordova plugin add cordova-plugin-zeroconf cordova-plugin-ble-central --no-telemetry &&
+cordova plugin add $add_plugin --no-telemetry &&
 cd .. &&
 echo "Project folder $pname is genearted with your YAML defined html copied into $pname/www." &&
 echo "You can add script in $pname/www/js/index.js to chagne behavior of your app." 

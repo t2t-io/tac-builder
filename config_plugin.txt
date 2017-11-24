@@ -1,0 +1,2 @@
+cordova-plugin-zeroconf
+cordova-plugin-ble-central

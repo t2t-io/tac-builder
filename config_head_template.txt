@@ -1,0 +1,9 @@
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>TAC template</title>
+ 	<link rel="stylesheet" href="lib/jquery.mobile-1.4.5.min.css">
+	<script src="lib/jquery.min.js"></script>
+ 	<script src="lib/jquery.mobile-1.4.5.min.js"></script>
+ 	<script src="lib/handlebars.min.js"></script>
+</head>

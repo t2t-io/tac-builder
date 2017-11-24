@@ -22,6 +22,12 @@ var jqmHead = `<head>
  	<script src="lib/handlebars.min.js"></script>
 </head>`
 
+try{
+	jqmHead = fs.readFileSync('config_head_template.txt').toString()
+}catch(e){
+	console.log('No config_head_template.txt, use default setting.')
+}
+
 // var pageTemplate = fs.readFileSync('page_template').toString()
 
 // check if the input is xlsx or yaml
