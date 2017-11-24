@@ -22,10 +22,20 @@ var jqmHead = `<head>
  	<script src="lib/handlebars.min.js"></script>
 </head>`
 
+var jsTail = `<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</body>`
+
 try{
 	jqmHead = fs.readFileSync('config_head_template.txt').toString()
 }catch(e){
 	console.log('No config_head_template.txt, use default setting.')
+}
+
+try{
+	jsTail = fs.readFileSync('config_foot_js.txt').toString()
+}catch(e){
+	console.log('No config_foot_js.txt, use defeault setting.')
 }
 
 // var pageTemplate = fs.readFileSync('page_template').toString()
@@ -89,8 +99,5 @@ for (var i=0;i<pages.length;i++){
 }
 
 var beautify = require('html')
-var resultStr = beautify.prettyPrint($.html().replace("<head></head>", jqmHead).replace("<html>", "<!DOCTYPE html><html>").replace("</body>", `
-	        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>`))
+var resultStr = beautify.prettyPrint($.html().replace("<head></head>", jqmHead).replace("<html>", "<!DOCTYPE html><html>").replace("</body>", jsTail))
 fs.writeFileSync(htmlName,resultStr)

@@ -172,6 +172,9 @@ cordova-plugin-zeroconf
 cordova-plugin-ble-central
 ```
 
+### `config_foot_js.txt`
+If this file exists in the same folder as your XLSX/YAML when you invoke `tac-spa`, `tac-gen` or `tac-spa-update`, tac-builder will use its content to add to `<script type="text/javscript" src=...>` element.  Otherwise it will use default template.
+
 ## Other handy tools
 `phantomjs`: helps with automation and screeshots
 `http-server`: for localhost tests; you can rut it in `www` folder of the generated project
