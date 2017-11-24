@@ -169,3 +169,30 @@ Save it and then issue following command to generate the YAML definition.  Then 
 ## Caveat
 1. Please use `dockerfile/update.sh` to update the installed image. Sometimes after the update the `tac-spa`, `tac-gen` and `tac-build` would emit error message like `module / depedency not found`.  Please run `dockerfile/update.sh` again to correct this.  This is a known npm install issue.
 1. `tac-spa` will generate .xlsx or .yaml file into .html with the same name.  However `tac-gen` will generate the input files into `./[project_name]/www/index.html`.  If you do `tac-spa` later in the project, please copy the file into `./[project_name]/www/index.html` manually. UPDATE: a new script has been added in alias.sh called `tac-spa-update`.  You can use this script to generate html and also copy it into the project folder's `www/index.html`
+
+## Code management
+With project folder generaetd by tac-builder, here are some suggestions about code management.
+
+Initially, source materials and project folder would like like:
+
+```
+[PROJECT-NAME].xlsx
+[PROJECT-NAME].yaml
+[JS_CODE].js
+	./[PROJECT-NAME]
+		./platforms
+		./www
+			./index.html
+			./css
+			./img
+			./js
+				./index.js
+```
+
+During the stage when there are still frequent changes to screen/page flow, the XLSX and/or YAML file will be chagned quite a lot.  You can use `tac-spa-update` command to update the revised XLSX/YAMLL into ./[PROJECT-NAME]/www/index.html.   And the resources including javasript code could be tracked and managed at the same level (eg. as `source-www`) and then copied into [PROJECT-NAME]/www/ with respectively.
+
+Once project structure is matured (ie. less need to change screen flow, etc), you can consider to add [PROJECT-NAME] into your code management system while ignore `platforms` folder for most of the content are machine generated.
+
+When app is loaded into mobilephone, the root of URI would be `www`.  Hence for example, a typical image reference could be added as HTML `<img src='img/mylogo.png' />`
+
+Certinaly you can also put [PROJECT-NAME] folder into code management as early as possible.
